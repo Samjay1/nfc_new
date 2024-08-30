@@ -39,6 +39,7 @@ class _ReaderState extends State<Reader> {
           IsoDep? isoDep = IsoDep.from(tag);
           print(isoDep?.historicalBytes);
         });
+
         //If NFC is available, start an NFC session and listen for NFC tags to be discovered.
         // NfcManager.instance.startSession(
         //   onDiscovered: (NfcTag tag) async {
