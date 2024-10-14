@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nfc/Crypto.dart';
+import 'package:nfc/PaymentPage.dart';
 import 'package:nfc/Reader.dart';
+import 'package:nfc/posNfc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -84,12 +87,31 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Center(
-          child: ElevatedButton(
+        child: Column(
+          children: [ElevatedButton(
             onPressed: ()=>{
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Reader()))
             }, child: const Text('Reader'),
           ),
+
+            ElevatedButton(
+              onPressed: ()=>{
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> PaymentPage()))
+              }, child: const Text('Payment'),
+            ),
+
+            ElevatedButton(
+              onPressed: ()=>{
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Crypto()))
+              }, child: const Text('Cryptography'),
+            ),
+
+            ElevatedButton(
+              onPressed: ()=>{
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const PosNfc()))
+              }, child: const Text('POS'),
+            ),
+          ]
         )
       ),
       floatingActionButton: FloatingActionButton(
